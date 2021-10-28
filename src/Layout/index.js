@@ -4,7 +4,7 @@ import { listDecks, deleteDeck, createDeck, deleteCard, updateDeck, createCard, 
 import Header from "./Display/Header";
 import NotFound from "./Errors/NotFound";
 import DeckList from "./Deck/DeckList";
-import DeckContent from "./Deck/DeckContent";
+import DeckRoutes from "./Deck/DeckRoutes";
 import Form from "./FormContent/Form";
 
 
@@ -99,7 +99,7 @@ function Layout() {
 					</Route>
 
 					<Route path="/decks/:deckId/">
-						<DeckContent
+						<DeckRoutes
 							editDeck={editDeck} 
 							removeDeck={removeDeck} 
 							addCard={addCard} 

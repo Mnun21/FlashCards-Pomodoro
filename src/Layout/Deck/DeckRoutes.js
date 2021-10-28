@@ -5,7 +5,7 @@ import DeckDisplay from "./DeckDisplay";
 import Study from "./Study";
 import PropTypes from "prop-types";
 
-function DeckContent({ editDeck, removeDeck, addCard, editCard, removeCard, abortController }) {
+function DeckRoutes ({ editDeck, removeDeck, addCard, editCard, removeCard, abortController }) {
 	const { deckId } = useParams();
 
 	
@@ -14,6 +14,7 @@ function DeckContent({ editDeck, removeDeck, addCard, editCard, removeCard, abor
 			<Switch>
 				<Route path="/decks/:deckId/study">
 					<Study abortController={abortController} />
+
 				</Route>
 
 				<Route path="/decks/:deckId/edit">
@@ -36,7 +37,7 @@ function DeckContent({ editDeck, removeDeck, addCard, editCard, removeCard, abor
 	);
 }
 
-DeckContent.propTypes = {
+DeckRoutes.propTypes = {
 	editDeck: PropTypes.func.isRequired,
 	removeDeck: PropTypes.func.isRequired, 
 	addCard: PropTypes.func.isRequired, 
@@ -45,4 +46,4 @@ DeckContent.propTypes = {
 	abortController: PropTypes.instanceOf(AbortController).isRequired,
 };
 
-export default DeckContent;
+export default DeckRoutes;

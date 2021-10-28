@@ -6,7 +6,7 @@ import Links from "../Display/Links";
 import CardFunction from "../Card/CardFunction";
 import NotEnoughCards from "../Errors/NotEnoughCards";
 import PropTypes from "prop-types";
-
+import Pomodoro from "../../pomodoro/Pomodoro";
 
 function Study({ abortController }) {
 	const [cardNum, setCardNum] = useState(0);
@@ -66,6 +66,7 @@ function Study({ abortController }) {
 	}
 
 	return (
+		<div>
 		<div id={`deck-${deck.id}-study`}>
 			<Links deckName={deck.name} deckId={deck.id} page="study" />
 			<h1>Study: {deck.name}</h1>
@@ -80,6 +81,12 @@ function Study({ abortController }) {
 					next={next}
 				/> :
 				<NotEnoughCards length={deck.cards.length} id={deck.id} />}
+		</div>
+
+		<h3>
+			Timer
+		</h3>
+			<Pomodoro />
 		</div>
 	);
 }
