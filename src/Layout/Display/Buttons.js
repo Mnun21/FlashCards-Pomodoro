@@ -31,7 +31,7 @@ function Buttons({ names, deckId, cardId, removeDeck, removeCard }) {
 			case "delete-deck":
 				buttonsJSX.push(
 					<button key="delete" type="button" className="btn btn-danger float-right" onClick={() => removeDeck(deckId)}>
-						&nbsp;
+						&nbsp;Delete
 						
 					</button>
 				);
